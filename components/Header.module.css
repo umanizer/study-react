@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+  padding: 2rem 0;
+}
+
+.anchor {
+  display: inline-block;
+  padding: 8px 24px;
+  font-size: 1.2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    border-color: #222;
+  }
+}
+
+.anchor:hover,
+.anchor:focus,
+.anchor:active {
+  color: #0070f3;
+}
