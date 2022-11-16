@@ -3,20 +3,18 @@ import styles from '../styles/Home.module.css';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { Main } from '../components/Main';
-import { useBgLightBlue } from 'src/hooks/useBgLightBlue';
+import { useBgLightBlue } from 'src/hooks/useBgColor';
 
 export default function About({
-    doubleCount,
-    isShow,
-    handleClick,
-    handleDisplay,
-    text,
-    array,
-    handleChange,
-    handleAdd,
-  } ) {
-
-
+  doubleCount,
+  isShow,
+  handleClick,
+  handleDisplay,
+  text,
+  array,
+  handleChange,
+  handleAdd,
+}) {
   return (
     <div className={styles.container}>
       <Head>
