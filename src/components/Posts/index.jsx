@@ -1,32 +1,34 @@
+import Link from 'next/link';
 import { useCallback, useEffect,useReducer } from 'react';
 
-export const Posts = () => {
-  const initialState = {
-    data: [],
-    loading: true,
-    error: null,
-  };
+const initialState = {
+  data: [],
+  loading: true,
+  error: null,
+};
 
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "end":
-        return {
-          ...state,
-          data: action.data,
-          loading: false,
-        };
-      case "error":
-        return {
-          ...state,
-          error:action.error,
-          loading: false,
-        };
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'end':
+      return {
+        ...state,
+        data: action.data,
+        loading: false,
+      };
+    case 'error':
+      return {
+        ...state,
+        error: action.error,
+        loading: false,
+      };
 
-      default: {
-        throw new Error('no such action type!');
-      }
+    default: {
+      throw new Error('no such action type!');
     }
-  };
+  }
+};
+
+export const Posts = () => {
 
   const [state, dispatch] = useReducer(reducer,initialState);
 
@@ -66,7 +68,13 @@ export const Posts = () => {
   return (
     <ol>
       {state.data.map((post) => {
-        return <li key={post.id}>{post.title}</li>;
+        return (
+          <li key={post.id}>
+            <Link href={`post/${post.id}`}>
+              <a>{post.title}</a>
+            </Link>
+          </li>
+        );
       })}
     </ol>
   );

@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import { Footer } from '../components/Footer';
-import { Header } from '../components/Header';
-import { Main } from '../components/Main';
+import styles from '../../styles/Home.module.css';
+import { Footer } from '../../components/Footer';
+import { Header } from '../../components/Header';
+import { Main } from '../../components/Main';
 import { useBgLightBlue } from 'src/hooks/useBgColor';
 
 const About = (props) => {
